@@ -32,23 +32,11 @@ public class Viabilidad {
         this.pInteres = pInteres;
     }
 
-    public double InteresSimple(int pTiempo, double pCapital, double pInteres){
-        double ecuacion1 = pCapital*pInteres*pTiempo;
-        return ecuacion1;
-    }
-
-    public double InteresCompuesto(int pTiempo, double pCapital, double pInteres){
-        double ecuacion2 = pCapital * (Math.pow((1+pInteres),pTiempo)-1);
-        return ecuacion2;
-    }
-
-    public double CompararInversion(int pTiempo, double pCapital, double pInteres){
-       double ecuacion3 = InteresCompuesto(pTiempo, pCapital, pInteres)-InteresSimple(pTiempo, pCapital, pInteres);
-        return ecuacion3;
-    }
-
+     
     public String inversion (int pTiempo, double pCapital, double pInteres) {
-        double respuesta = InteresCompuesto(pTiempo, pCapital, pInteres)-InteresSimple(pTiempo, pCapital, pInteres);
+        double InteresSimple = pCapital*pInteres*pTiempo;
+        double InteresCompuesto = pCapital * (Math.pow((1+pInteres),pTiempo)-1);
+        double respuesta = InteresCompuesto-InteresSimple;
         return "La diferencia en el total de intereses generados para el proyecto, si escogemos entre evaluarlo a una tasa de interés Compuesto y evaluarlo a una tasa de interés Simple, asciende a la cifra de: $ "+respuesta;
     }
 
