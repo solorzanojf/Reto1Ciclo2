@@ -6,8 +6,7 @@ public class Viabilidad {
     private double pCapital;
     private double pInteres;
 
-    public Viabilidad(int
-    pTiempo, double pCapital, double pInteres){
+    public Viabilidad(){
         this.pTiempo = pTiempo;
         this.pCapital = pCapital;
         this.pInteres = pInteres;
@@ -37,7 +36,7 @@ public class Viabilidad {
         double InteresSimple = pCapital*pInteres*pTiempo;
         double InteresCompuesto = pCapital * (Math.pow((1+pInteres),pTiempo)-1);
         double respuesta = InteresCompuesto-InteresSimple;
-        return "La diferencia en el total de intereses generados para el proyecto, si escogemos entre evaluarlo a una tasa de interés Compuesto y evaluarlo a una tasa de interés Simple, asciende a la cifra de: $ "+respuesta;
+        return "La diferencia en el total de intereses generados para el proyecto, si escogemos entre evaluarlo a una tasa de interés Compuesto y evaluarlo a una tasa de interés Simple, asciende a la cifra de: $"+respuesta;
     }
 
 
